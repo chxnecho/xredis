@@ -1,0 +1,31 @@
+{
+  "name": "xredis",
+  "version": "0.1.0",
+  "description": "A feature-rich, Redis-compatible server implemented from scratch in pure Node.js. The only dependency is fengari (a Lua interpreter in pure JS), used to power EVAL scripting.",
+  "type": "commonjs",
+  "main": "src/main.js",
+  "bin": {
+    "xredis-server": "bin/xredis-server.js",
+    "xredis-cli": "bin/xredis-cli.js",
+    "xredis-bench": "bin/xredis-bench.js"
+  },
+  "scripts": {
+    "start": "node bin/xredis-server.js",
+    "server": "node bin/xredis-server.js",
+    "cli": "node bin/xredis-cli.js",
+    "bench": "node bin/xredis-bench.js",
+    "test": "node scripts/smoke-protocol.js && node scripts/smoke-e2e.js && node scripts/smoke-aof.js && node scripts/smoke-rdb.js && node scripts/smoke-repl.js",
+    "test:protocol": "node scripts/smoke-protocol.js",
+    "test:e2e": "node scripts/smoke-e2e.js",
+    "test:aof": "node scripts/smoke-aof.js",
+    "test:rdb": "node scripts/smoke-rdb.js",
+    "test:repl": "node scripts/smoke-repl.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "fengari": "^0.1.5"
+  }
+}
