@@ -3,3 +3,13 @@ data/
 *.log
 *.aof
 *.rdb
+dump-*.rdb
+appendonlydir/
+.env
+.env.*
+coverage/
+*.tmp
+*.swp
+.DS_Store
+.idea/
+.vscode/

@@ -3,7 +3,31 @@
   "version": "0.1.0",
   "description": "A feature-rich, Redis-compatible server implemented from scratch in pure Node.js. The only dependency is fengari (a Lua interpreter in pure JS), used to power EVAL scripting.",
   "type": "commonjs",
-  "main": "src/main.js",
+  "main": "src/server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chxnecho/xredis.git"
+  },
+  "homepage": "https://github.com/chxnecho/xredis#readme",
+  "bugs": {
+    "url": "https://github.com/chxnecho/xredis/issues"
+  },
+  "keywords": [
+    "redis",
+    "redis-server",
+    "redis-compatible",
+    "resp",
+    "resp2",
+    "resp3",
+    "aof",
+    "rdb",
+    "replication",
+    "lua",
+    "pubsub",
+    "key-value",
+    "in-memory"
+  ],
+  "author": "chxnecho",
   "bin": {
     "xredis-server": "bin/xredis-server.js",
     "xredis-cli": "bin/xredis-cli.js",
