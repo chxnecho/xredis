@@ -210,9 +210,10 @@ async function phaseThree(c, PORT) {
   // A bad bulk terminator (declared length present, but no CRLF) is a
   // protocol error: the server must reply with an error and close the socket.
   const closed = await new Promise((resolve) => {
-    const sock = net.createConnection({ port: PORT }, () => {
+    const sock = net.createConnection({ host: '127.0.0.1', port: PORT }, () => {
       sock.write('*2\r\n$3\r\nSET\r\n$2\r\nabXY');
     });
+    sock.on('error', () => {});   // connection errors resolve via 'close'
     sock.on('data', () => {});
     sock.on('close', () => resolve(true));
     setTimeout(() => resolve(false), 2000);
